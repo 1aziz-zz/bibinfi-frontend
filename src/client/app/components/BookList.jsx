@@ -8,8 +8,7 @@ import ReactDOM from 'react-dom';
 			<BookTableRows book={book} />
 		);
 		return (
-			<div class="row">			
-			<table class="table table-striped">
+			<table class="table table-striped table-responsive">
 				<tbody>
 					<tr>
 						<th scope="col">ID</th>
@@ -21,7 +20,6 @@ import ReactDOM from 'react-dom';
 					{books}
 				</tbody>
 			</table>
-			</div>
 		)
 	}
 }
@@ -33,7 +31,7 @@ class BookTableRows extends React.Component {
 		return (
 			<tr>
 				<td>{this.props.book.id}</td>
-				<td>{this.props.book.authors}</td>
+				<td>{this.props.book.authors.join()}</td>
 				<td>{this.props.book.title}</td>
 				<td>{this.props.book.isbn}</td>
 				<td>{this.props.book.year}</td>
