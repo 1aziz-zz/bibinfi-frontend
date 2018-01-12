@@ -31,14 +31,16 @@ class AddBooksISBN extends React.Component {
 	}
     handleClick(){
         this.addBook(this.state.inputfield);
+        window.location.reload();
      
-       }
+     }
      
-       updateInputValue(evt){
+    updateInputValue(evt){
          //console.log("input field updated with "+evt.target.value);
          this.state={inputfield: evt.target.value};   
      
-       }
+     }
+
     render() {
         var r; 
          r = <div class="modal fade" id="declineModal"  role="dialog" aria-hidden="true">

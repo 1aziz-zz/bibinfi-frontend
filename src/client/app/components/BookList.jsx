@@ -2,7 +2,18 @@ import React from 'react';
 import { render } from 'react-dom';
 import ReactDOM from 'react-dom';
 
- class BookList extends React.Component {
+
+class BookList extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			searchTerm = '',
+			books = []
+		}
+		this.onInputChange = this.onInputChange.bind(this);
+		
+	}
 	render() {
 		var books = this.props.books.map((book) =>
 			<BookTableRows book={book} />
