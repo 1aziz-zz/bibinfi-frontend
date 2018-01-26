@@ -22,11 +22,13 @@ import AddBooksISBN from "./components/AddBooksISBN.jsx";
 	}
 	render() {
 		return (
-
-			<div>
-				<AddBooksISBN />
-				<BookList books={this.state.books} />
-			</div>
+			<AddBooksISBN />
+			<Switch>
+				<div>
+					<Route exact path='/' component={BookList}/>
+					<Route path='/book' component={Book}/>
+				</div>
+			</Switch>
 
 		)
 	}
